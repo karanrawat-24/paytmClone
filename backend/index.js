@@ -1,15 +1,13 @@
 const express = require('express');
-const mainRoute = require('./routes');
 const cors = require('cors');
-
-const JWT_SECRET = require('./config');
+const mainRouter = require('./routes');
 
 const app = express();
 app.use(cors());
 app.use(express.json());
 
-app.use('/api/v1', mainRoute);
+app.use('/api/v1', mainRouter);
 
-app.listen(PORT, () => {
-  console.log(`server is started at port no ${PORT}`);
+app.listen(3500, () => {
+  console.log('server is started at port no 3000');
 });
